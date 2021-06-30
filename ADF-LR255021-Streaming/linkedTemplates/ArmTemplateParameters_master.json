@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-LR255021-Streaming"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"Odbc1_connectionString": {
+			"value": ""
+		},
+		"Odbc1_password": {
+			"value": ""
+		},
+		"Odbc1_properties_typeProperties_userName": {
+			"value": "AFP_2021_LR255021"
+		},
+		"integrationRuntime-ADF-Streaming_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/1f037183-21d0-4c33-8356-296f23107c7c/resourcegroups/AFP-2021-MS/providers/Microsoft.DataFactory/factories/ADF-LR255021-EventHub/integrationruntimes/IR-ADF-LR255021-EventHub"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
