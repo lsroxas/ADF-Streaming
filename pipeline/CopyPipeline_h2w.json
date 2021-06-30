@@ -28,9 +28,7 @@
 						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"wildcardFolderPath": "*",
-							"wildcardFileName": "*",
+							"fileListPath": "lr255021-weather",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
