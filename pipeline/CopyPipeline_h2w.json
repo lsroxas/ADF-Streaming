@@ -28,7 +28,7 @@
 						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"fileListPath": "lr255021-weather",
+							"fileListPath": "lr255021-weather/0_22a9d02701e04ee1828df0fb5918d566_1.json",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
