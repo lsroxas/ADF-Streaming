@@ -1,0 +1,114 @@
+{
+	"name": "CopyPipeline_h2w",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_h2w",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "lr255021-weather//"
+					},
+					{
+						"name": "Destination",
+						"value": "\"AFP_2021_lr255021\".\"Stream_Agg\""
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "OdbcSink",
+						"writeBatchSize": 0
+					},
+					"enableStaging": false,
+					"parallelCopies": 1,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "deviceId"
+								},
+								"sink": {
+									"name": "deviceId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "AVERAGE_TEMP"
+								},
+								"sink": {
+									"name": "AVERAGE_TEMP",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"path": "AVERAGE_HUMIDITY"
+								},
+								"sink": {
+									"name": "AVERAGE_HUMIDITY",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"path": "Time"
+								},
+								"sink": {
+									"name": "TimeEntered",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "RowCount"
+								},
+								"sink": {
+									"name": "RowCount",
+									"type": "Int32"
+								}
+							}
+						],
+						"mapComplexValuesToString": false
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_h2w",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_h2w",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
