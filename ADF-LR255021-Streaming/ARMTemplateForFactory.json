@@ -65,7 +65,7 @@
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
-									"wildcardFolderPath": "*",
+									"wildcardFolderPath": "device1",
 									"wildcardFileName": "*",
 									"enablePartitionDiscovery": false
 								},
@@ -189,6 +189,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"folderPath": "device1",
 						"container": "lr255021-weather"
 					}
 				},
