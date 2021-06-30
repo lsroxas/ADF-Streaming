@@ -1,0 +1,18 @@
+{
+	"name": "SourceDataset_h2w",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "lr255021-weather"
+			}
+		},
+		"schema": {}
+	}
+}
